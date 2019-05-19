@@ -4,9 +4,12 @@ const createStore = (reducer) => {
 
     const getState = () => {
         return curState
-
     }
-    // 发布
+
+    /**
+     * 发布
+     * @param action
+     */
     const dispatch = (action) => {
 
         if (typeof action.type === 'undefined') throw new Error('action不合法')
@@ -15,7 +18,8 @@ const createStore = (reducer) => {
         }
         try {
             isDispatching = true;
-            curState = curReducer(curState, curReducer) // 新的state覆盖旧的}
+            curState = curReducer(curState, curReducer) // 新的state覆盖旧的
+            listeners.forEach(l => l())
         } finally {
             isDispatch = false;
         }
@@ -26,14 +30,26 @@ const createStore = (reducer) => {
      * @param listener
      * @returns {Function}
      */
-    const subscribe = (listener)=>{
+    const subscribe = (listener) => {
         listeners.push(fn);
         return function () {
             listeners = listeners.filter(fn => fn !== listener)
         }
     }
+
+    /**
+     * combineReducers将reducer合并为一个函数
+     */
+    const combineReducers = reducers=>{
+        return (curState,action)=>{
+            return Object.keys(reducers).reduce((nextState,reducer_key)=>{
+                nextState = reducers[reducer_key](curState[reducer_key],action)
+            })
+        }
+    }
+
     return {
-        getState
+        getState, dispatch, subscribe
     }
 }
 

@@ -8,6 +8,7 @@
 ## Contents
 
 - [Javascript](#)
+  - [x] bind
   - [ ] Promise
   - [ ] 待定
   

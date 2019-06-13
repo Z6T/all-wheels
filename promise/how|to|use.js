@@ -15,9 +15,12 @@ p.then((v) => {
 
 console.log('end');
 
+
 /**
  * 运行结果
- * promise start
+    promise start
     end
     data-success
  */
+
+   

@@ -3,7 +3,7 @@
  * @param {promise传递的是一个函数，在new的阶段就会立即执行} executor 
  * new 出来的实例有自己的默认状态，因此需要定义状态
  */
-function Promise(executor) {
+function Zpromise(executor) {
     let self = this;
     self.status = 'pending' // 默认状态
     self.onResolvedCallbacks = []; // 所有成功的回调，---第一个参数
@@ -34,19 +34,23 @@ function Promise(executor) {
  * 失败执行函数 onRejected
  * 
  */
-Promise.prototype.then = function (onFullfilled, onRejected) {
+Zpromise.prototype.then = function (onFullfilled, onRejected) {
     let self = this;
-    if (self.status === 'pending') { // 在还是pending的时候就收集所有的成功失败回调--订阅
-        self.onResolvedCallbacks.push(function () {
-            onFullfilled(self.value)
-        })
-        self.onRejectedCallbacks.push(function () {
-            onRejected(self.reason)
-        })
-    }
-    if (self.status === 'resolved') {
-        onFullfilled()
-    } else if (self.status === 'rejected') {
-        onRejected();
-    }
+    return new Zpromise((resolve, reject) => {
+        if (self.status === 'pending') { // 在还是pending的时候就收集所有的成功失败回调--订阅
+            self.onResolvedCallbacks.push(function () {
+                onFullfilled(self.value)
+            })
+            self.onRejectedCallbacks.push(function () {
+                onRejected(self.reason)
+            })
+        }
+        if (self.status === 'resolved') {
+            onFullfilled()
+        } else if (self.status === 'rejected') {
+            onRejected();
+        }
+    })
 }
+
+export default Zpromise;

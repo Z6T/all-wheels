@@ -23,7 +23,7 @@ Function.prototype.bind = function (context) {
     //  Bound.prototype = self.prototype;
     */
     function NOP() { } // 空对象
-    NOP.prototype = selef.prototype;
+    NOP.prototype = self.prototype;
     Bound.prototype = new NOP
     return Bound;
 }

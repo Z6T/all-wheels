@@ -21,7 +21,7 @@
   - [ ] 待定
   
 - [react](#)
-  - [ ] react
+  - [ ] react-router
   - [ ] redux
   - [ ] react-redux
   - [ ] redux-saga
@@ -46,9 +46,6 @@ Build-your-own-xxx-based-on-Javascript是一个通过JavaScript语言编写的,�
 ## Built With
 * 修改代码请阅读 开发指南， 使用过程中发现任何问题都可以提 Issue 给我。当然，我也非常欢迎你给我发 PR。
 
-## Contribution
-* [JavaScrript](#)
-* [Parcel](https://parceljs.org/)
 
 
 

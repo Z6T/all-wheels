@@ -16,12 +16,12 @@
   - [ ] 待定
  
 - [vue](#)
-  - [ ] MVVM
+  - [x] MVVM
   - [ ] vuex
   - [ ] 待定
   
 - [react](#)
-  - [ ] react-router
+  - [x] react-router
   - [ ] redux
   - [ ] react-redux
   - [ ] redux-saga

@@ -22,7 +22,7 @@
   
 - [react](#)
   - [x] react-router
-  - [ ] redux
+  - [x] redux
   - [ ] react-redux
   - [ ] redux-saga
   - [ ] 待定

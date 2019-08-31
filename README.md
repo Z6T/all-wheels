@@ -9,7 +9,7 @@
 
 - [Javascript](#)
   - [x] bind
-  - [ ] Promise
+  - [x] Promise
   - [ ] 待定
   
 - [移动端](#)

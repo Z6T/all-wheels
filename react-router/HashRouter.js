@@ -3,23 +3,56 @@ import PropsTypes from "prop-types";
 
 class HashRouter extends Component {
   static childContextTypes = {
-    location: PropsTypes.object
+    location: PropsTypes.object,
+    history:PropsTypes.object
   };
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      location:{
+        state:{},
+        pathname: window.location.hash.slice(1) || "/"
+      }
+    };
   }
 
   getChildContext() {
+    let _this = this;
     return {
-      location: { pathname: window.location.hash.slice(1) || "/" }
+      location: this.state.location,
+      history:{
+        push(path){
+          if(typeof path === 'object'){
+            let {pathname,state} = path;
+            _this.setState({
+              // 新的location对象
+              location:{
+                ..._this.state.location,state,pathname
+              }
+            },()=>{
+              window.location.hash = pathname;
+            })
+          }else{
+            _this.setState({
+              location:{
+                ..._this.state.location,
+                pathname:path
+              }
+            },()=>{
+              console.log('_this.state :', _this.state);
+              // path是字符串，直接设置
+              window.location.hash = path;
+            })
+          }
+        }
+      }
     };
   }
-  componentWillMount() {
+  
+  componentDidMount() {
     window.location.hash = window.location.hash || "/";
     let render = () => {
-        console.log('render', render)
-      this.setState({});
+      this.setState({location:{...this.state.location,pathname:window.location.hash.slice(1)||'/'}});
     };
     window.addEventListener("hashchange", render);
   }

@@ -39,7 +39,6 @@ class HashRouter extends Component {
                 pathname:path
               }
             },()=>{
-              console.log('_this.state :', _this.state);
               // path是字符串，直接设置
               window.location.hash = path;
             })

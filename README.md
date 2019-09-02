@@ -1,5 +1,5 @@
 # Build-your-own-xxx-based-on-Javascript
-[![Version](https://img.shields.io/npm/v/x-vui.svg)](https://www.npmjs.com/package/x-vui) [![Downloads](http://img.shields.io/npm/dm/x-vui.svg)](https://www.npmjs.com/package/x-vui) [![License](https://img.shields.io/npm/l/x-vui.svg?style=flat)](https://opensource.org/licenses/MIT) [![TravisCI](https://travis-ci.org/Brickies/vui.svg)](https://travis-ci.org/Brickies/vui)
+[![Version](https://img.shields.io/npm/v/x-vui.svg)](https://www.npmjs.com/package/x-vui) [![License](https://img.shields.io/npm/l/x-vui.svg?style=flat)](https://opensource.org/licenses/MIT) [![TravisCI](https://travis-ci.org/Brickies/vui.svg)](https://travis-ci.org/Brickies/vui)
 
 > 无轮子,不前端,打造优秀的轮子无疑能够使你的功力打造,这将是一个优秀的前端轮子库
 

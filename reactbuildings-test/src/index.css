@@ -1,0 +1,28 @@
+h1{
+    background-color: #000;
+    color: #fff;
+    font-weight: 400;
+    font-size: 28px;
+    padding: 0 20px;
+}
+h1 a{
+    display: inline-block;
+    padding: 0 10px;
+}
+a.active{
+    border-bottom: 1px solid #fff;
+}
+
+h6{
+    float: left;
+}
+h6 a {
+    width: 80px;
+    display: inline-block;
+    margin: 10px;
+    background-color: rgb(179, 169, 169);
+    color: #fff;
+    font-weight: 400;
+    font-size: 28px;
+    padding: 0 20px;
+}

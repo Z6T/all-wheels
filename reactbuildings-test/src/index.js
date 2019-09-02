@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
 import App from './components/App';
+import './index.css';
 
-import { HashRouter as Router, Route, Switch ,Link} from '../../react-router/index'
+import { HashRouter as Router, Route, Switch ,Link} from './react-router/index'
 // import { HashRouter as Router, Route, Switch ,Link} from 'react-router-dom'
 
 export class HomeUser extends Component {
@@ -10,8 +11,7 @@ export class HomeUser extends Component {
         console.log('this.props.location', this.props.location)
         return (
             <div>
-                {this.props.location.state.day} -----
-                nihao
+                home/user路由接收到的state:{this.props.location.state.day} 
             </div>
         )
     }
